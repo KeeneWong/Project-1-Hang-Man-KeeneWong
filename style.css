@@ -1,0 +1,55 @@
+*{
+    /* border: 2px yellow solid; */
+    color: rgb(79, 79, 90);
+    font-family: 'Righteous', cursive;
+}
+
+body{
+    background-image: url(./img/background.jpg);
+    background-size: cover;
+    background-position: bottom;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px yellow solid;
+
+
+}
+
+/* class--------------------------------------------------------------------------------------------------- */
+.top-main h1{
+    font-size: 50px;
+}
+
+.bottom-main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.left-GamingPage{
+    width: 600px;
+    height: 600px;
+    /* border: 2px red solid; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-GamingPage{
+    width: 600px;
+    height: 600px;
+    border: 2px red solid;
+}
+
+.kitchen{
+    width: 600px;
+    height: 400px;
+    background-image: url(./img/kitchen.png);
+    background-position: center;
+    background-size: cover;
+    border: 5px solid whitesmoke;
+    border-radius: 20px;
+}
