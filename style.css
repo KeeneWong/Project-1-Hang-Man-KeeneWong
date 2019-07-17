@@ -24,10 +24,18 @@ header{
     width: 100%;
     border-radius: 10px;
     border: 7px solid rgb(77, 90, 148);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 h1{
     text-align: center;
+}
+
+img{
+    margin-top: 15px;
+    height: 100px;
 }
 
 
@@ -55,7 +63,7 @@ h1{
 
 .right-GamingPage{
     width: 600px;
-    height: 500px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -105,6 +113,21 @@ h1{
 
 .winnerPage{
     text-align: center;
+}
+
+.hints{
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    background-image: url(./img/hintsOn.gif);
+    background-position: center;
+    background-size: cover;
+}
+
+.contain-hints{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 

@@ -41,7 +41,6 @@ keyboards.forEach(function(key){
     key.addEventListener('click',function(event){
         
     let typeletter = key.getAttribute('data-letter');
-    console.log(typeletter);
     let guessAreaArray = getguessArea.innerText.split('');
     
     
@@ -54,7 +53,7 @@ keyboards.forEach(function(key){
         for(i = 0; i < wordToGuess.length; i++){
         if (wordToGuess[i] === typeletter)
         arrayIndexOfwordToGuess.push(i);
-        console.log(arrayIndexOfwordToGuess);
+        // console.log(arrayIndexOfwordToGuess);
         }
 
 
@@ -80,8 +79,6 @@ keyboards.forEach(function(key){
     }
 
     
-    
-
 
 
     else{
@@ -106,4 +103,9 @@ document.querySelectorAll('.resetBtn').forEach(btn=>{
         window.location.reload();
     })
 
+})
+
+//hints button----------------------------------------------------
+document.querySelector('.hints').addEventListener('click',function(){
+    getguessArea.innerText[0]
 })
