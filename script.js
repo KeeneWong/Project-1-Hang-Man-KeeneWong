@@ -1,4 +1,5 @@
-let wordToGuess = "a";
+let wordToGuess = "nth";
+let dangerScore = 0;
 const getplayStage = document.querySelector('.playStage');
 const getinputStage = document.querySelector('.inputStage');
 const getGuessBtn = document.querySelector('.guess');
@@ -60,10 +61,25 @@ keyboards.forEach(function(key){
     getguessArea.innerText = guessAreaArray.join().replace(/,/g,"");
     
     console.log(guessAreaArray);
-    if(getguessArea.innerText==wordToGuess){
-        alert(`You got the right word!!!`)
+        if(getguessArea.innerText==wordToGuess){
+        alert(`You got the right word!!!`)}
     }
+
+
+
+    else{
+        dangerScore ++;
+        document.querySelector('.dangerScore').innerText = `Danger Score: ${dangerScore}`;
+
+        if(dangerScore==10){
+            document.querySelector('.right-GamingPage').classList.toggle('hidden');
+            document.querySelector('.gameoverPage').classList.toggle('hidden');
+        }
     }
+
+
+
+
     })
 
     // if(getguessArea.innerText===wordToGuess){
