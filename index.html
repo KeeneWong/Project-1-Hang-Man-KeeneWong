@@ -24,9 +24,20 @@
                 <button class="onePlayerBtn playerBtn" data-playselect="1player">1 Player</button>
                 <button class="twoPlayerBtn playerBtn" data-playselect="2player">2 Player</button>
             </div>
-            <h2 class="playerstatus">2 Player</h2>
+            <h2 class="playerstatus">1 Player</h2>
             
 
+        </div>
+
+        <div class="databaseSelect hidden">
+            <h1>Choose the category that you want to cook</h1>
+            <div class="containDatabaseBtn>">
+                <button class="databaseBtn" data-category="fruit">Fruit</button>
+                <button class="databaseBtn" data-category="bakery">Bakery</button>
+                <button class="databaseBtn" data-category="meat">Meat</button>
+            </div>
+            <h2 class="categoryselected">Category</h2>
+            <button class="guess">Guess!!!</button>
         </div>
 
 
@@ -101,11 +112,13 @@
                     
             </div>
             <div class="gameoverPage hidden">
+                    <h1 class="answer"></h1>
                     <h1 id="gmaeoverH1">You let your son down FATHER :(</h1>
                     <button class="resetBtn">retry</button>
             </div>
 
             <div class="winnerPage hidden">
+                    <h1 class="answer"></h1>
                     <h1 id="gmaeoverH1">Yum Yum Yum<br>
                         Thank You PaPa I Love You~
                     </h1>

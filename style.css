@@ -102,9 +102,6 @@ img{
     align-items: center;
 }
 
-.hidden{
-    display: none;
-}
 
 .dangerScore{
     color: rgb(158, 47, 47);
@@ -219,4 +216,26 @@ img{
     border-radius: 10px;
     color: rgb(131, 202, 103);
     padding: 2px;
+}
+
+.databaseSelect{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+.answer{
+    color: rgb(129, 235, 129);
+}
+
+.hidden{
+    display: none;
+}
+
+.categoryselected{
+    color: rgb(131, 202, 103);
+    border-radius: 5px;
+    border: 4px solid rgb(131, 202, 103);
 }

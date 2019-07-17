@@ -1,6 +1,7 @@
 let wordToGuess = "nth";
 let dangerScore = 0;
-let playerstatus = '2player';
+let playerstatus = '1player';
+let category = 'na';
 const getplayStage = document.querySelector('.playStage');
 const getinputStage = document.querySelector('.inputStage');
 const getGuessBtn = document.querySelector('.guess');
@@ -11,32 +12,86 @@ const getkitchen = document.querySelector('.kitchen');
 
 //database----------------------------------------------------------------
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+let foodDatabase = {
+    fruit: ['apple','apricots','avocado','banana','cranberries','grapefruit','grapes'],
+    bakery: ['biscuit','bun','buttercream','hazelnuts','vanilla'],
+    meat: ['beef','lamb','pork','ribs','oxtail','bacon','chicken']
+}
 
 //==============================================================================
+
+
+
+//choose player page ------------------------------------------------
+
+//Play button
+document.querySelector('.playButton').addEventListener('click',function(){
+    document.querySelector('.playerselect').classList.toggle('hidden');
+    if(playerstatus == '1player'){
+        document.querySelector('.databaseSelect').classList.toggle('hidden');
+
+        // document.querySelector('.bottom-main').classList.toggle('hidden');
+        // document.querySelector('.inputStage').classList.toggle('hidden');
+        // document.querySelector('.playStage').classList.toggle('hidden');
+
+    }
+    if(playerstatus == '2player'){
+    document.querySelector('.bottom-main').classList.toggle('hidden');
+    }
+})
+
+//choose player button
+document.querySelectorAll('.playerBtn').forEach(btn=>{
+    btn.addEventListener('click',function(){
+        // this.classList.toggle('lightblue');
+        playerstatus = this.getAttribute('data-playselect');
+        document.querySelector('.playerstatus').innerText = this.innerText;
+        console.log(playerstatus)
+    })
+})
+
+
+// //catergory buttons -------------------------------------------------------
+document.querySelectorAll('.databaseBtn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+        category = this.getAttribute('data-category');
+        console.log(category)
+        document.querySelector('.categoryselected').innerText = category;
+    })
+})
+
+
+
 
 
 //create the word to guess and the blankline--------------------
 getGuessBtn.addEventListener('click',function(){
     let blankLine = [];
+
+    if(playerstatus == '1player'){
+
+        if(category == 'na'){
+            alert('You have to choose a category !!')
+        }
+        else{
+        wordToGuess = foodDatabase[category][(Math.floor((Math.random() * foodDatabase[category].length) + 1))];
+        console.log(wordToGuess);
+        document.querySelector('.databaseSelect').classList.toggle('hidden');
+        document.querySelector('.bottom-main').classList.toggle('hidden');
+        document.querySelector('.inputStage').classList.toggle('hidden');
+        document.querySelector('.playStage').classList.toggle('hidden');
+        }
+
+
+
+    }
+
+    if(playerstatus == '2player'){
     wordToGuess = getinput.value;
+    getplayStage.classList.toggle('hidden');
+    getinputStage.classList.toggle('hidden');
+    }
+
     // console.log(wordToGuess);
     wordToGuessArray = wordToGuess.split("");
     wordToGuessArray.forEach(letter=>{
@@ -47,13 +102,13 @@ getGuessBtn.addEventListener('click',function(){
     // To get the ID guessArea and put the blank line in it
     document.getElementById('guessArea').innerText = blankLine.join().replace(/,/g,"");
     getkitchen.classList.toggle('statusStart');
-    getplayStage.classList.toggle('hidden');
-    getinputStage.classList.toggle('hidden');
     document.querySelector('.dangerScore').innerText = `Finally~`;
 
     
 
 })
+
+
 
 
 // keyboard function and guess----------------------------------------
@@ -100,6 +155,7 @@ keyboards.forEach(function(key){
             document.querySelector('.dangerScore').innerText = `Best Father Ever`
             document.querySelector('.right-GamingPage').classList.toggle('hidden');
             document.querySelector('.winnerPage').classList.toggle('hidden');
+            document.querySelector('.answer').innerText = `The answer is ${wordToGuess}`;
             }
     }
 
@@ -111,10 +167,13 @@ keyboards.forEach(function(key){
         if(dangerScore==5){
             document.querySelector('.right-GamingPage').classList.toggle('hidden');
             document.querySelector('.gameoverPage').classList.toggle('hidden');
+            document.querySelector('.answer').innerText = `The answer is ${wordToGuess}`;
         }
         }
     })
 })
+
+
 
 
 // reset button--------------------------------------------
@@ -138,33 +197,3 @@ document.querySelector('.hints').addEventListener('click',function(){
 }  
 })
 
-//choose player page ------------------------------------------------
-
-//Play button
-document.querySelector('.playButton').addEventListener('click',function(){
-    document.querySelector('.playerselect').classList.toggle('hidden');
-    if(playerstatus == '1player'){
-        // document.querySelector('.bottom-main').classList.toggle('hidden');
-        // document.querySelector('.inputStage').classList.toggle('hidden');
-        // document.querySelector('.playStage').classList.toggle('hidden');
-
-    }
-    if(playerstatus == '2player'){
-    document.querySelector('.bottom-main').classList.toggle('hidden');
-    }
-})
-
-//choose player button
-document.querySelectorAll('.playerBtn').forEach(btn=>{
-    btn.addEventListener('click',function(){
-        // this.classList.toggle('lightblue');
-        playerstatus = this.getAttribute('data-playselect');
-        document.querySelector('.playerstatus').innerText = this.innerText;
-        console.log(playerstatus)
-    })
-})
-
-
-// addEventListener('click',function(){
-//     console.log(this)
-// })
