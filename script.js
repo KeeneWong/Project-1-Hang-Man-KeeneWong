@@ -34,6 +34,7 @@ getGuessBtn.addEventListener('click',function(){
 
 // keyboard function and guess----------------------------------------
 
+
 const keyboards = document.querySelectorAll('.letter');
 
 keyboards.forEach(function(key){
@@ -42,21 +43,44 @@ keyboards.forEach(function(key){
     let typeletter = key.getAttribute('data-letter');
     console.log(typeletter);
     let guessAreaArray = getguessArea.innerText.split('');
-    // console.log(guessAreaArray)
-
-
-    if(wordToGuess.includes(typeletter)===true){
-    guessAreaArray[wordToGuess.indexOf(typeletter)] = typeletter;
-    getguessArea.innerText = guessAreaArray.join().replace(/,/g,"");
     
-    console.log(guessAreaArray);
+    
+    
+    let indexOfWordToGuess = wordToGuess.indexOf(typeletter);
+    let arrayIndexOfwordToGuess = [];
+
+    // generate an  array for the index of wordToGuess So that i can replace the letter 
+    // with all the index i got----------------------
+        for(i = 0; i < wordToGuess.length; i++){
+        if (wordToGuess[i] === typeletter)
+        arrayIndexOfwordToGuess.push(i);
+        console.log(arrayIndexOfwordToGuess);
+        }
+
+
+    // if the player guess the right word-------------
+    if(wordToGuess.includes(typeletter)===true){
+
+        //replace all the _ with right letter index
+        arrayIndexOfwordToGuess.forEach(index=>{
+            guessAreaArray[index] = typeletter;
+            })
+
+        getguessArea.innerText = guessAreaArray.join().replace(/,/g,"");
+    // console.log(guessAreaArray);
+    
         if(getguessArea.innerText==wordToGuess){
             getkitchen.classList.toggle('statusWin');
             document.querySelector('.dangerScore').innerText = `Best Father Ever`
             document.querySelector('.right-GamingPage').classList.toggle('hidden');
             document.querySelector('.winnerPage').classList.toggle('hidden');
-        }
+            }
+    
+        
     }
+
+    
+    
 
 
 
