@@ -1,20 +1,29 @@
 *{
     /* border: 2px yellow solid; */
-    color: rgb(79, 79, 90);
+    color: rgb(31, 31, 37);
     font-family: 'Righteous', cursive;
 }
 
 body{
-    background-image: url(./img/background.jpg);
+    background-image: url(./img/background2.jpg);
     background-size: cover;
     background-position: bottom;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    border: 2px yellow solid;
+    margin: 0px;
+    /* border: 2px yellow solid; */
 
 
+}
+
+header{
+    background-image: url(./img/background.jpg);
+    background-position: top;
+    width: 100%;
+    border-radius: 10px;
+    border: 7px solid rgb(77, 90, 148);
 }
 
 h1{
@@ -51,21 +60,21 @@ h1{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 2px red solid;
+    /* border: 2px red solid; */
 }
 
 .kitchen{
     width: 600px;
     height: 400px;
-    background-image: url(./img/kitchen.png);
+    background-image: url(./img/status0.gif);
     background-position: center;
     background-size: cover;
-    border: 5px solid whitesmoke;
+    border: 5px solid rgb(121, 142, 233);
     border-radius: 20px;
 }
 
 .guessArea{
-    border: 2px red solid;;
+    /* border: 2px red solid; */
 }
 
 
@@ -87,6 +96,17 @@ h1{
     padding-left: 20px;
 }
 
+.gameoverPage{
+    text-align: center;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+
+.winnerPage{
+    text-align: center;
+}
+
 
 
 /* keyboard class---------------------- */
@@ -103,6 +123,40 @@ h1{
     text-transform: uppercase;
 }
 
+.letter:hover {
+    background-color: rgb(149, 184, 250);
+  }
+
 .active{
     background: rgb(132, 206, 255);
   }
+
+
+/* kitchen status class------------------------ */
+.statusStart{
+    background-image: url(./img/statusStart.gif);
+}
+
+.status1{
+    background-image: url(./img/status1.gif);
+}
+
+.status2{
+    background-image: url(./img/status2.gif);
+}
+
+.status3{
+    background-image: url(./img/status3.gif);
+}
+
+.status4{
+    background-image: url(./img/status4.gif);
+}
+
+.status5{
+    background-image: url(./img/status5.gif);
+}
+
+.statusWin{
+    background-image: url(./img/statusWin.gif);
+}

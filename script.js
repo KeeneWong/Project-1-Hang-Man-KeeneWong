@@ -6,6 +6,7 @@ const getGuessBtn = document.querySelector('.guess');
 const getinput = document.querySelector('.input');
 const getuserinput = document.querySelector('.userinput');
 const getguessArea = document.querySelector('#guessArea');
+const getkitchen = document.querySelector('.kitchen');
 
 
 //create the word to guess and the blankline--------------------
@@ -21,23 +22,11 @@ getGuessBtn.addEventListener('click',function(){
     
     // To get the ID guessArea and put the blank line in it
     document.getElementById('guessArea').innerText = blankLine.join().replace(/,/g,"");
-
+    getkitchen.classList.toggle('statusStart');
     getplayStage.classList.toggle('hidden');
     getinputStage.classList.toggle('hidden');
 
 })
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -62,7 +51,11 @@ keyboards.forEach(function(key){
     
     console.log(guessAreaArray);
         if(getguessArea.innerText==wordToGuess){
-        alert(`You got the right word!!!`)}
+            getkitchen.classList.toggle('statusWin');
+            document.querySelector('.dangerScore').innerText = `Best Father Ever`
+            document.querySelector('.right-GamingPage').classList.toggle('hidden');
+            document.querySelector('.winnerPage').classList.toggle('hidden');
+        }
     }
 
 
@@ -70,19 +63,23 @@ keyboards.forEach(function(key){
     else{
         dangerScore ++;
         document.querySelector('.dangerScore').innerText = `Danger Score: ${dangerScore}`;
+        getkitchen.classList.toggle(`status${dangerScore}`);
 
-        if(dangerScore==10){
+        if(dangerScore==5){
             document.querySelector('.right-GamingPage').classList.toggle('hidden');
             document.querySelector('.gameoverPage').classList.toggle('hidden');
         }
     }
 
-
-
-
     })
 
-    // if(getguessArea.innerText===wordToGuess){
-    //     alert(`That's the right word!!`)
-    // }
+})
+
+
+// reset button--------------------------------------------
+document.querySelectorAll('.resetBtn').forEach(btn=>{
+    btn.addEventListener('click',function(){
+        window.location.reload();
+    })
+
 })
