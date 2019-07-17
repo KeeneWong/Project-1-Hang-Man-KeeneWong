@@ -1,5 +1,6 @@
 let wordToGuess = "nth";
 let dangerScore = 0;
+let playerstatus = '2player';
 const getplayStage = document.querySelector('.playStage');
 const getinputStage = document.querySelector('.inputStage');
 const getGuessBtn = document.querySelector('.guess');
@@ -7,6 +8,29 @@ const getinput = document.querySelector('.input');
 const getuserinput = document.querySelector('.userinput');
 const getguessArea = document.querySelector('#guessArea');
 const getkitchen = document.querySelector('.kitchen');
+
+//database----------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//==============================================================================
 
 
 //create the word to guess and the blankline--------------------
@@ -25,11 +49,11 @@ getGuessBtn.addEventListener('click',function(){
     getkitchen.classList.toggle('statusStart');
     getplayStage.classList.toggle('hidden');
     getinputStage.classList.toggle('hidden');
+    document.querySelector('.dangerScore').innerText = `Finally~`;
+
+    
 
 })
-
-
-
 
 
 // keyboard function and guess----------------------------------------
@@ -54,15 +78,18 @@ keyboards.forEach(function(key){
         if (wordToGuess[i] === typeletter)
         arrayIndexOfwordToGuess.push(i);
         // console.log(arrayIndexOfwordToGuess);
+        // console.log(wordToGuess.includes(typeletter))
         }
 
 
     // if the player guess the right word-------------
     if(wordToGuess.includes(typeletter)===true){
-
+        // console.log(arrayIndexOfwordToGuess);
         //replace all the _ with right letter index
         arrayIndexOfwordToGuess.forEach(index=>{
             guessAreaArray[index] = typeletter;
+            // getguessArea.innerText[index] = typeletter;
+            // console.log(getguessArea.innerText[index]);
             })
 
         getguessArea.innerText = guessAreaArray.join().replace(/,/g,"");
@@ -74,15 +101,10 @@ keyboards.forEach(function(key){
             document.querySelector('.right-GamingPage').classList.toggle('hidden');
             document.querySelector('.winnerPage').classList.toggle('hidden');
             }
-    
-        
     }
 
-    
-
-
     else{
-        dangerScore ++;
+;        dangerScore ++;
         document.querySelector('.dangerScore').innerText = `Danger Score: ${dangerScore}`;
         getkitchen.classList.toggle(`status${dangerScore}`);
 
@@ -90,10 +112,8 @@ keyboards.forEach(function(key){
             document.querySelector('.right-GamingPage').classList.toggle('hidden');
             document.querySelector('.gameoverPage').classList.toggle('hidden');
         }
-    }
-
+        }
     })
-
 })
 
 
@@ -107,5 +127,44 @@ document.querySelectorAll('.resetBtn').forEach(btn=>{
 
 //hints button----------------------------------------------------
 document.querySelector('.hints').addEventListener('click',function(){
-    getguessArea.innerText[0]
+    let guessAreaArray = getguessArea.innerText.split('');
+    if(guessAreaArray[0]=='_'){
+
+    guessAreaArray[0] = wordToGuess[0]
+    console.log(guessAreaArray)
+    getguessArea.innerText = guessAreaArray.join().replace(/,/g,'');
+    document.querySelector('.hints').classList.add('hintsclicked');
+        
+}  
 })
+
+//choose player page ------------------------------------------------
+
+//Play button
+document.querySelector('.playButton').addEventListener('click',function(){
+    document.querySelector('.playerselect').classList.toggle('hidden');
+    if(playerstatus == '1player'){
+        // document.querySelector('.bottom-main').classList.toggle('hidden');
+        // document.querySelector('.inputStage').classList.toggle('hidden');
+        // document.querySelector('.playStage').classList.toggle('hidden');
+
+    }
+    if(playerstatus == '2player'){
+    document.querySelector('.bottom-main').classList.toggle('hidden');
+    }
+})
+
+//choose player button
+document.querySelectorAll('.playerBtn').forEach(btn=>{
+    btn.addEventListener('click',function(){
+        // this.classList.toggle('lightblue');
+        playerstatus = this.getAttribute('data-playselect');
+        document.querySelector('.playerstatus').innerText = this.innerText;
+        console.log(playerstatus)
+    })
+})
+
+
+// addEventListener('click',function(){
+//     console.log(this)
+// })

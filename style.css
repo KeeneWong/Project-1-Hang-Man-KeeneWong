@@ -5,7 +5,7 @@
 }
 
 body{
-    background-image: url(./img/background2.jpg);
+    background-image: url(./img/background2.png);
     background-size: cover;
     background-position: bottom;
     display: flex;
@@ -13,6 +13,7 @@ body{
     justify-content: space-around;
     align-items: center;
     margin: 0px;
+    /* height: 500px; */
     /* border: 2px yellow solid; */
 
 
@@ -49,6 +50,7 @@ img{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    /* height: 600px; */
 }
 
 .left-GamingPage{
@@ -79,6 +81,14 @@ img{
     background-size: cover;
     border: 5px solid rgb(121, 142, 233);
     border-radius: 20px;
+}
+
+.playerselect{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
 }
 
 .guessArea{
@@ -154,6 +164,13 @@ img{
     background: rgb(132, 206, 255);
   }
 
+.hints:hover {
+    background-image: url(./img/hintsOff.jpg);
+}
+
+.hintsclicked {
+    background-image: url(./img/hintsOff.jpg);
+}
 
 /* kitchen status class------------------------ */
 .statusStart{
@@ -182,4 +199,24 @@ img{
 
 .statusWin{
     background-image: url(./img/statusWin.gif);
+}
+
+.playButton{
+    font-size: 80px;
+}
+
+.playButton:hover{
+    font-size: 100px;
+
+}
+
+.playerBtn:hover{
+    background-color: lightblue;
+}
+
+.playerstatus{
+    border: 5px solid rgb(131, 202, 103);
+    border-radius: 10px;
+    color: rgb(131, 202, 103);
+    padding: 2px;
 }
