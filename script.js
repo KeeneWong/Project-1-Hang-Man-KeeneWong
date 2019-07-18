@@ -95,6 +95,7 @@ getGuessBtn.forEach(function(guessB){
     
         if(playerstatus == '2player'){
         cookingsound.play();
+        countdown();
         wordToGuess = getinput.value;
         console.log(`njn`)
         clicksound.play();
