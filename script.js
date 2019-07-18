@@ -94,13 +94,13 @@ getGuessBtn.forEach(function(guessB){
         }
     
         if(playerstatus == '2player'){
-        cookingsound.play();
-        countdown();
         wordToGuess = getinput.value;
         console.log(`njn`)
-        clicksound.play();
         getplayStage.classList.toggle('hidden');
         getinputStage.classList.toggle('hidden');
+        clicksound.play();
+        cookingsound.play();
+        countdown();
         }
     
         // console.log(wordToGuess);
