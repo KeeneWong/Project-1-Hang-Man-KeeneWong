@@ -1,7 +1,8 @@
 let wordToGuess = "nth";
 let dangerScore = 0;
 let playerstatus = '1player';
-let category = 'na';
+let category = 'player input';
+let count = 30;
 const getplayStage = document.querySelector('.playStage');
 const getinputStage = document.querySelector('.inputStage');
 const getGuessBtn = document.querySelectorAll('.guess');
@@ -13,7 +14,7 @@ const getkitchen = document.querySelector('.kitchen');
 //database----------------------------------------------------------------
 
 let foodDatabase = {
-    fruit: ['apple','apricots','avocado','banana','cranberries','grapefruit','grapes'],
+    fruit: ['apple','kiwi','lime','mango','apricots','avocado','banana','cranberries','grapefruit','grapes'],
     bakery: ['biscuit','bun','buttercream','hazelnuts','vanilla'],
     meat: ['beef','lamb','pork','ribs','oxtail','bacon','chicken']
 }
@@ -29,14 +30,14 @@ document.querySelector('.playButton').addEventListener('click',function(){
     document.querySelector('.playerselect').classList.toggle('hidden');
     if(playerstatus == '1player'){
         document.querySelector('.databaseSelect').classList.toggle('hidden');
-
-        // document.querySelector('.bottom-main').classList.toggle('hidden');
-        // document.querySelector('.inputStage').classList.toggle('hidden');
-        // document.querySelector('.playStage').classList.toggle('hidden');
-
+        clicksound.play();
+        backgroundsong.play();
+        
     }
     if(playerstatus == '2player'){
-    document.querySelector('.bottom-main').classList.toggle('hidden');
+        document.querySelector('.bottom-main').classList.toggle('hidden');
+        clicksound.play();
+        backgroundsong.play();
     }
 })
 
@@ -47,6 +48,7 @@ document.querySelectorAll('.playerBtn').forEach(btn=>{
         playerstatus = this.getAttribute('data-playselect');
         document.querySelector('.playerstatus').innerText = this.innerText;
         console.log(playerstatus)
+        clicksound.play();
     })
 })
 
@@ -57,6 +59,7 @@ document.querySelectorAll('.databaseBtn').forEach(function(btn){
         category = this.getAttribute('data-category');
         console.log(category)
         document.querySelector('.categoryselected').innerText = category;
+        clicksound.play();
     })
 })
 
@@ -70,8 +73,8 @@ getGuessBtn.forEach(function(guessB){
         let blankLine = [];
     
         if(playerstatus == '1player'){
-    
-            if(category == 'na'){
+            
+            if(category == 'player input'){
                 alert('You have to choose a category !!')
             }
             else{
@@ -81,6 +84,9 @@ getGuessBtn.forEach(function(guessB){
             document.querySelector('.bottom-main').classList.toggle('hidden');
             document.querySelector('.inputStage').classList.toggle('hidden');
             document.querySelector('.playStage').classList.toggle('hidden');
+            document.querySelector('.categorydisplay').innerText = `Category is ${category}`;
+            countdown();
+            cookingsound.play();
             }
     
     
@@ -88,8 +94,10 @@ getGuessBtn.forEach(function(guessB){
         }
     
         if(playerstatus == '2player'){
+        cookingsound.play();
         wordToGuess = getinput.value;
         console.log(`njn`)
+        clicksound.play();
         getplayStage.classList.toggle('hidden');
         getinputStage.classList.toggle('hidden');
         }
@@ -133,6 +141,7 @@ keyboards.forEach(function(key){
     
     let indexOfWordToGuess = wordToGuess.indexOf(typeletter);
     let arrayIndexOfwordToGuess = [];
+    
 
     // generate an  array for the index of wordToGuess So that i can replace the letter 
     // with all the index i got----------------------
@@ -150,6 +159,7 @@ keyboards.forEach(function(key){
         //replace all the _ with right letter index
         arrayIndexOfwordToGuess.forEach(index=>{
             guessAreaArray[index] = typeletter;
+            clicksound.play();
             // getguessArea.innerText[index] = typeletter;
             // console.log(getguessArea.innerText[index]);
             })
@@ -163,7 +173,8 @@ keyboards.forEach(function(key){
             document.querySelector('.dangerScore').innerText = `Best Father Ever`
             document.querySelector('.right-GamingPage').classList.toggle('hidden');
             document.querySelector('.winnerPage').classList.toggle('hidden');
-            document.querySelector('.answer').innerText = `The answer is ${wordToGuess}`;
+            document.querySelectorAll('.answer')[1].innerText = `The answer is ${wordToGuess}`;
+            yeah.play();
             }
     }
 
@@ -172,11 +183,15 @@ keyboards.forEach(function(key){
         document.querySelector('.dangerScore').innerText = `Danger Score: ${dangerScore}`;
         getkitchen.classList.toggle(`status${dangerScore}`);
         this.classList.add('red');
+        errorsound.play();
 
         if(dangerScore==5){
             document.querySelector('.right-GamingPage').classList.toggle('hidden');
             document.querySelector('.gameoverPage').classList.toggle('hidden');
-            document.querySelector('.answer').innerText = `The answer is ${wordToGuess}`;
+            document.querySelectorAll('.answer')[0].innerText = `The answer is ${wordToGuess}`;
+            lostsound.play();
+            cry.play();
+            backgroundsong.pause();
         }
         }
     })
@@ -188,6 +203,7 @@ keyboards.forEach(function(key){
 // reset button--------------------------------------------
 document.querySelectorAll('.resetBtn').forEach(btn=>{
     btn.addEventListener('click',function(){
+        clicksound.play();
         window.location.reload();
     })
 
@@ -197,7 +213,7 @@ document.querySelectorAll('.resetBtn').forEach(btn=>{
 document.querySelector('.hints').addEventListener('click',function(){
     let guessAreaArray = getguessArea.innerText.split('');
     if(guessAreaArray[0]=='_'){
-
+    clicksound.play();
     guessAreaArray[0] = wordToGuess[0]
     console.log(guessAreaArray)
     getguessArea.innerText = guessAreaArray.join().replace(/,/g,'');
@@ -206,3 +222,41 @@ document.querySelector('.hints').addEventListener('click',function(){
 }  
 })
 
+//create timer
+function countdown(){
+    let timer=setInterval(function(){
+    if(document.querySelector('.gameoverPage').getAttribute('class') !== "gameoverPage hidden"){
+        clearInterval(timer);
+      }
+    else if(count==0){
+        document.querySelector('.right-GamingPage').classList.toggle('hidden');
+        document.querySelector('.gameoverPage').classList.toggle('hidden');
+        document.querySelector('.kitchen').classList.toggle('status5');
+        document.querySelectorAll('.answer')[0].innerText = `The answer is ${wordToGuess}`;
+        console.log(`still running`)
+        lostsound.play();
+        cry.play();
+        backgroundsong.pause();
+        clearInterval(timer);
+    }
+    else if(count>0){
+      count --;
+      document.querySelector('.timer').innerText = count;
+      console.log(count)
+    }
+
+    },1000)
+    }
+    // if(count==0){
+    //     console.log(`still running`)
+    //     clearInterval();}
+
+
+    //audio feature0----------------------------------------
+    let backgroundsong = new Audio("./sound/background.mp3");
+    let cookingsound = new Audio("./sound/cooking.mp3");
+    let clicksound = new Audio("./sound/click.mp3");
+    let errorsound = new Audio("./sound/error.mp3");
+    let lostsound = new Audio("./sound/lost.mp3");
+    let yeah = new Audio("./sound/yeah.mp3")
+    let cry = new Audio("./sound/cry.mp3")

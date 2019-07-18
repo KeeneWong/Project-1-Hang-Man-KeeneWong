@@ -253,3 +253,9 @@ img{
 .green{
     background-color: rgb(158, 226, 158);
 }
+
+.categorydisplay{
+    border: 5px solid black;
+    border-radius: 5px;
+    margin: 0px auto 0px auto;
+}
