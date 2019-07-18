@@ -4,7 +4,7 @@ let playerstatus = '1player';
 let category = 'na';
 const getplayStage = document.querySelector('.playStage');
 const getinputStage = document.querySelector('.inputStage');
-const getGuessBtn = document.querySelector('.guess');
+const getGuessBtn = document.querySelectorAll('.guess');
 const getinput = document.querySelector('.input');
 const getuserinput = document.querySelector('.userinput');
 const getguessArea = document.querySelector('#guessArea');
@@ -65,48 +65,55 @@ document.querySelectorAll('.databaseBtn').forEach(function(btn){
 
 
 //create the word to guess and the blankline--------------------
-getGuessBtn.addEventListener('click',function(){
-    let blankLine = [];
-
-    if(playerstatus == '1player'){
-
-        if(category == 'na'){
-            alert('You have to choose a category !!')
-        }
-        else{
-        wordToGuess = foodDatabase[category][(Math.floor((Math.random() * foodDatabase[category].length) + 1))];
-        console.log(wordToGuess);
-        document.querySelector('.databaseSelect').classList.toggle('hidden');
-        document.querySelector('.bottom-main').classList.toggle('hidden');
-        document.querySelector('.inputStage').classList.toggle('hidden');
-        document.querySelector('.playStage').classList.toggle('hidden');
-        }
-
-
-
-    }
-
-    if(playerstatus == '2player'){
-    wordToGuess = getinput.value;
-    getplayStage.classList.toggle('hidden');
-    getinputStage.classList.toggle('hidden');
-    }
-
-    // console.log(wordToGuess);
-    wordToGuessArray = wordToGuess.split("");
-    wordToGuessArray.forEach(letter=>{
-        blankLine.push('_');
-    });
-    // console.log(blankLine);
+getGuessBtn.forEach(function(guessB){
+    guessB.addEventListener('click',function(){
+        let blankLine = [];
     
-    // To get the ID guessArea and put the blank line in it
-    document.getElementById('guessArea').innerText = blankLine.join().replace(/,/g,"");
-    getkitchen.classList.toggle('statusStart');
-    document.querySelector('.dangerScore').innerText = `Finally~`;
-
+        if(playerstatus == '1player'){
     
+            if(category == 'na'){
+                alert('You have to choose a category !!')
+            }
+            else{
+            wordToGuess = foodDatabase[category][(Math.floor((Math.random() * foodDatabase[category].length)))];
+            console.log(wordToGuess);
+            document.querySelector('.databaseSelect').classList.toggle('hidden');
+            document.querySelector('.bottom-main').classList.toggle('hidden');
+            document.querySelector('.inputStage').classList.toggle('hidden');
+            document.querySelector('.playStage').classList.toggle('hidden');
+            }
+    
+    
+    
+        }
+    
+        if(playerstatus == '2player'){
+        wordToGuess = getinput.value;
+        console.log(`njn`)
+        getplayStage.classList.toggle('hidden');
+        getinputStage.classList.toggle('hidden');
+        }
+    
+        // console.log(wordToGuess);
+        wordToGuessArray = wordToGuess.split("");
+        wordToGuessArray.forEach(letter=>{
+            blankLine.push('_');
+        });
+        // console.log(blankLine);
+        
+        // To get the ID guessArea and put the blank line in it
+        document.getElementById('guessArea').innerText = blankLine.join().replace(/,/g,"");
+        getkitchen.classList.toggle('statusStart');
+        document.querySelector('.dangerScore').innerText = `Finally~`;
+    
+        
+    
+    })
+
+
 
 })
+
 
 
 
@@ -148,6 +155,7 @@ keyboards.forEach(function(key){
             })
 
         getguessArea.innerText = guessAreaArray.join().replace(/,/g,"");
+        this.classList.add('green');
     // console.log(guessAreaArray);
     
         if(getguessArea.innerText==wordToGuess){
@@ -163,6 +171,7 @@ keyboards.forEach(function(key){
 ;        dangerScore ++;
         document.querySelector('.dangerScore').innerText = `Danger Score: ${dangerScore}`;
         getkitchen.classList.toggle(`status${dangerScore}`);
+        this.classList.add('red');
 
         if(dangerScore==5){
             document.querySelector('.right-GamingPage').classList.toggle('hidden');

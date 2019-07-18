@@ -227,7 +227,7 @@ img{
 }
 
 .answer{
-    color: rgb(129, 235, 129);
+    color: rgb(75, 180, 75);
 }
 
 .hidden{
@@ -238,4 +238,18 @@ img{
     color: rgb(131, 202, 103);
     border-radius: 5px;
     border: 4px solid rgb(131, 202, 103);
+}
+
+.red{
+    background-color: rgb(228, 122, 122);
+}
+
+#sad{
+    border: 5px solid rgb(182, 193, 245);
+    border-radius: 7px;
+    height: 150px;
+}
+
+.green{
+    background-color: rgb(158, 226, 158);
 }
