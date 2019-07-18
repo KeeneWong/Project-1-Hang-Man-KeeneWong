@@ -259,3 +259,67 @@ img{
     border-radius: 5px;
     margin: 0px auto 0px auto;
 }
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+    body {
+      /* background-color: red; */
+      /* display: none; */
+    }
+  
+
+    header{
+        height: 100px;
+    }
+
+    .top-main{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        border: none;
+        align-items: center;
+
+    }
+
+    .top-main h1{
+        font-size: 30px;
+    }
+
+    .top-main img{
+        display: none;
+    }
+
+  .bottom-main{
+    flex-direction: column;
+    /* height: 600px; */
+}
+
+.left-GamingPage{
+    width: 600px;
+    height: 600px;
+    /* border: 2px red solid; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-GamingPage{
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px red solid; */
+}
+
+}

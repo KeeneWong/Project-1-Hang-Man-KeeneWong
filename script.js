@@ -2,7 +2,7 @@ let wordToGuess = "nth";
 let dangerScore = 0;
 let playerstatus = '1player';
 let category = 'player input';
-let count = 30;
+let count = 6;
 const getplayStage = document.querySelector('.playStage');
 const getinputStage = document.querySelector('.inputStage');
 const getGuessBtn = document.querySelectorAll('.guess');
@@ -16,7 +16,7 @@ const getkitchen = document.querySelector('.kitchen');
 let foodDatabase = {
     fruit: ['apple','kiwi','lime','mango','apricots','avocado','banana','cranberries','grapefruit','grapes'],
     bakery: ['biscuit','bun','buttercream','hazelnuts','vanilla'],
-    meat: ['beef','lamb','pork','ribs','oxtail','bacon','chicken']
+    meat: ['beef','lamb','pork','ribs','oxtail','bacon','chicken','steak','ham','veal']
 }
 
 //==============================================================================
@@ -226,7 +226,8 @@ document.querySelector('.hints').addEventListener('click',function(){
 //create timer
 function countdown(){
     let timer=setInterval(function(){
-    if(document.querySelector('.gameoverPage').getAttribute('class') !== "gameoverPage hidden"){
+    if((document.querySelector('.gameoverPage').getAttribute('class') == "gameoverPage") || 
+    (document.querySelector('.winnerPage').getAttribute('class') == "winnerPage")){
         clearInterval(timer);
       }
     else if(count==0){
