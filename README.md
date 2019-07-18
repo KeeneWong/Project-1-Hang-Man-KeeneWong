@@ -5,11 +5,15 @@ Description
 <!-- What your project is / should be used for -->
 
 https://keenewong.github.io/cookingpapa/
+
 My name is cookingpapa. :)
+
 Its a Game of papa cooking food to his son. (By typing the correct word)
 
 It's like a branch of hangman.
+
 Auctually the logic is the same.
+
 Just follow the interface and CLICK to play!!!
 
 
@@ -17,10 +21,15 @@ Just follow the interface and CLICK to play!!!
 <!-- What problem(s) your projects solves -->
 
 Problem:
+
 -sometimes css layer was messy when the number div are keep increasing.
+
 -replace the multiple __ with the letter when plauyer got the right word.
+
 -get the sound effect.
+
 -deploy the website
+
 -acess the object and array of food database
 
 
@@ -63,8 +72,7 @@ Player have 30 second for guessing thw word.
 
 But if you get all the word , you win.
 
-
-
+<img src="./sc/sc4.png">
 
 
 
