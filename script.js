@@ -1,8 +1,12 @@
+
+//variables------------------------------------------------------------------------------------------------------------------------
+
 let wordToGuess = "nth";
 let dangerScore = 0;
 let playerstatus = '1player';
 let category = 'player input';
 let count = 30;
+
 const getplayStage = document.querySelector('.playStage');
 const getinputStage = document.querySelector('.inputStage');
 const getGuessBtn = document.querySelectorAll('.guess');
@@ -11,11 +15,14 @@ const getuserinput = document.querySelector('.userinput');
 const getguessArea = document.querySelector('#guessArea');
 const getkitchen = document.querySelector('.kitchen');
 
-//database----------------------------------------------------------------
+//database------------------------------------------------------------------------------------------------------------------------
 
 let foodDatabase = {
-    fruit: ['apple','kiwi','lime','mango','apricots','avocado','banana','cranberries','grapefruit','grapes'],
-    bakery: ['biscuit','bun','buttercream','hazelnuts','vanilla'],
+    fruit: ['apple','kiwi','lime','mango','apricot','avocado','banana','cranberry','grapefruit','grapes'],
+
+    bakery: ['biscuit','bun','buttercream','hazelnut','vanilla',
+             'cracker','pie','cookie','sandwich','doughnut','pancake','biscuit','cupcake','toast'],
+
     meat: ['beef','lamb','pork','ribs','oxtail','bacon','chicken','steak','ham','veal']
 }
 
@@ -23,7 +30,7 @@ let foodDatabase = {
 
 
 
-//choose player page ------------------------------------------------
+//choose player page ----------------------------------------------------------------------------------------------------------------
 
 //Play button
 document.querySelector('.playButton').addEventListener('click',function(){
@@ -53,7 +60,7 @@ document.querySelectorAll('.playerBtn').forEach(btn=>{
 })
 
 
-// //catergory buttons -------------------------------------------------------
+// //catergory buttons ---------------------------------------------------------------------------------------------------------------
 document.querySelectorAll('.databaseBtn').forEach(function(btn){
     btn.addEventListener('click',function(){
         category = this.getAttribute('data-category');
@@ -65,7 +72,7 @@ document.querySelectorAll('.databaseBtn').forEach(function(btn){
 
 
 
-//create the word to guess and the blankline--------------------
+//create the word to guess and the blankline------------------------------------------------------------------------------------------
 getGuessBtn.forEach(function(guessB){
     guessB.addEventListener('click',function(){
         let blankLine = [];
@@ -123,7 +130,7 @@ getGuessBtn.forEach(function(guessB){
 
 
 
-// keyboard function and guess----------------------------------------
+// keyboard function and guess---------------------------------------------------------------------------------------------------------
 
 
 const keyboards = document.querySelectorAll('.letter');
@@ -196,7 +203,7 @@ keyboards.forEach(function(key){
 
 
 
-// reset button--------------------------------------------
+// reset button------------------------------------------------------------------------------------------------------------------------
 document.querySelectorAll('.resetBtn').forEach(btn=>{
     btn.addEventListener('click',function(){
         clicksound.play();
@@ -205,7 +212,7 @@ document.querySelectorAll('.resetBtn').forEach(btn=>{
 
 })
 
-//hints button----------------------------------------------------
+//hints button-------------------------------------------------------------------------------------------------------------------------
 document.querySelector('.hints').addEventListener('click',function(){
     let guessAreaArray = getguessArea.innerText.split('');
     if(guessAreaArray[0]=='_'){
@@ -249,11 +256,11 @@ function countdown(){
     //     clearInterval();}
 
 
-    //audio feature0----------------------------------------
-    let backgroundsong = new Audio("./sound/background.mp3");
-    let cookingsound = new Audio("./sound/cooking.mp3");
-    let clicksound = new Audio("./sound/click.mp3");
-    let errorsound = new Audio("./sound/error.mp3");
-    let lostsound = new Audio("./sound/lost.mp3");
-    let yeah = new Audio("./sound/yeah.mp3")
-    let cry = new Audio("./sound/cry.mp3")
+//audio feature0--------------------------------------------------------------------------------------------------------------------
+let backgroundsong = new Audio("./sound/background.mp3");
+let cookingsound = new Audio("./sound/cooking.mp3");
+let clicksound = new Audio("./sound/click.mp3");
+let errorsound = new Audio("./sound/error.mp3");
+let lostsound = new Audio("./sound/lost.mp3");
+let yeah = new Audio("./sound/yeah.mp3")
+let cry = new Audio("./sound/cry.mp3")
