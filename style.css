@@ -230,9 +230,7 @@ img{
     color: rgb(75, 180, 75);
 }
 
-.hidden{
-    display: none;
-}
+
 
 .categoryselected{
     color: rgb(131, 202, 103);
@@ -257,9 +255,26 @@ img{
 .categorydisplay{
     border: 5px solid black;
     border-radius: 5px;
-    margin: 0px auto 0px auto;
+    margin: 0px;
 }
 
+.timerAndHints{
+    /* border: 4px solid red; */
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+    width: 200px;
+}
+
+.catAndDangerscore{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 600px;
+
+}
 
 
 
@@ -277,8 +292,11 @@ img{
   
 
     header{
-        height: 100px;
+        height: 50px;
+        
     }
+
+    p{font-size: 12px;}
 
     .top-main{
         display: flex;
@@ -286,6 +304,7 @@ img{
         justify-content: center;
         border: none;
         align-items: center;
+        border: 4px solid rgb(77, 90, 148);
 
     }
 
@@ -302,24 +321,86 @@ img{
     /* height: 600px; */
 }
 
+.kitchen{
+    width: 300px;
+    height: 200px;
+}
+
 .left-GamingPage{
-    width: 600px;
-    height: 600px;
+    width: 300px;
+    height: 275px;
     /* border: 2px red solid; */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+}
+
+.left-GamingPage h3{
+    font-size: 10px;
+}
+
+.left-GamingPage h2{
+    font-size: 12px;
 }
 
 .right-GamingPage{
-    width: 600px;
-    height: 600px;
+    width: 300px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     /* border: 2px red solid; */
 }
+.playButton{
+    font-size: 30px;
+}
 
+.databaseSelect h1{
+    font-size: 15px;
+}
+
+.categorydisplay{
+    font-size: 10px;
+}
+.catAndDangerscore{
+    width: 300px;
+}
+.timer{
+    margin: 0px 0px 0px 0px;
+}
+#guessArea{
+    /* margin: 0px; */
+}
+
+.keyboard{
+    margin-top: 5px;
+    width: 300px;
+}
+.row{
+    margin: 10px 0px;
+}
+.letter {
+    display: inline-block;
+    padding: 5px 6px;
+    border: 1px solid #000;
+    text-transform: uppercase;
+}
+
+.answer{font-size: 15px;}
+#gmaeoverH1{font-size: 15px;}
+.playButton:hover{font-size: 40px;}
+
+.inputStage p{
+    font-size: 12px;
+}
+
+}
+
+
+
+
+.hidden{
+    display: none;
 }
