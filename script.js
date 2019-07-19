@@ -251,10 +251,6 @@ function countdown(){
 
     },1000)
     }
-    // if(count==0){
-    //     console.log(`still running`)
-    //     clearInterval();}
-
 
 //audio feature0--------------------------------------------------------------------------------------------------------------------
 let backgroundsong = new Audio("./sound/background.mp3");
