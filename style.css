@@ -15,8 +15,6 @@ body{
     margin: 0px;
     /* height: 500px; */
     /* border: 2px yellow solid; */
-
-
 }
 
 header{
@@ -30,9 +28,7 @@ header{
     justify-content: center;
 }
 
-h1{
-    text-align: center;
-}
+h1{ text-align: center;}
 
 img{
     margin-top: 15px;
@@ -41,9 +37,7 @@ img{
 
 
 /* class--------------------------------------------------------------------------------------------------- */
-.top-main h1{
-    font-size: 50px;
-}
+.top-main h1{font-size: 50px;}
 
 .bottom-main{
     display: flex;
@@ -91,11 +85,6 @@ img{
     height: 500px;
 }
 
-.guessArea{
-    /* border: 2px red solid; */
-}
-
-
 .playStage{
     display: flex;
     flex-direction: column;
@@ -103,24 +92,13 @@ img{
 }
 
 
-.dangerScore{
-    color: rgb(158, 47, 47);
-}
+.dangerScore{color: rgb(158, 47, 47);}
 
-#gmaeoverH1{
-    padding-left: 20px;
-}
+#gmaeoverH1{padding-left: 20px;}
 
-.gameoverPage{
-    text-align: center;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
-}
+.gameoverPage{text-align: center;}
 
-.winnerPage{
-    text-align: center;
-}
+.winnerPage{text-align: center;}
 
 .hints{
     height: 40px;
@@ -137,8 +115,6 @@ img{
     align-items: center;
 }
 
-
-
 /* keyboard class---------------------- */
 .row {
     text-align: center;
@@ -153,63 +129,34 @@ img{
     text-transform: uppercase;
 }
 
-.letter:hover {
-    background-color: rgb(149, 184, 250);
-  }
+.letter:hover {background-color: rgb(149, 184, 250);}
 
-.active{
-    background: rgb(132, 206, 255);
-  }
+.active{background: rgb(132, 206, 255);}
 
-.hints:hover {
-    background-image: url(./img/hintsOff.jpg);
-}
+.hints:hover {background-image: url(./img/hintsOff.jpg);}
 
-.hintsclicked {
-    background-image: url(./img/hintsOff.jpg);
-}
+.hintsclicked {background-image: url(./img/hintsOff.jpg);}
 
 /* kitchen status class------------------------ */
-.statusStart{
-    background-image: url(./img/statusStart.gif);
-}
+.statusStart{background-image: url(./img/statusStart.gif);}
 
-.status1{
-    background-image: url(./img/status1.gif);
-}
+.status1{background-image: url(./img/status1.gif);}
 
-.status2{
-    background-image: url(./img/status2.gif);
-}
+.status2{background-image: url(./img/status2.gif);}
 
-.status3{
-    background-image: url(./img/status3.gif);
-}
+.status3{background-image: url(./img/status3.gif);}
 
-.status4{
-    background-image: url(./img/status4.gif);
-}
+.status4{background-image: url(./img/status4.gif);}
 
-.status5{
-    background-image: url(./img/status5.gif);
-}
+.status5{background-image: url(./img/status5.gif);}
 
-.statusWin{
-    background-image: url(./img/statusWin.gif);
-}
+.statusWin{background-image: url(./img/statusWin.gif);}
 
-.playButton{
-    font-size: 80px;
-}
+.playButton{font-size: 80px;}
 
-.playButton:hover{
-    font-size: 100px;
+.playButton:hover{font-size: 100px;}
 
-}
-
-.playerBtn:hover{
-    background-color: lightblue;
-}
+.playerBtn:hover{background-color: lightblue;}
 
 .playerstatus{
     border: 5px solid rgb(131, 202, 103);
@@ -226,11 +173,7 @@ img{
     height: 500px;
 }
 
-.answer{
-    color: rgb(75, 180, 75);
-}
-
-
+.answer{color: rgb(75, 180, 75);}
 
 .categoryselected{
     color: rgb(131, 202, 103);
@@ -238,9 +181,7 @@ img{
     border: 4px solid rgb(131, 202, 103);
 }
 
-.red{
-    background-color: rgb(228, 122, 122);
-}
+.red{background-color: rgb(228, 122, 122);}
 
 #sad{
     border: 5px solid rgb(182, 193, 245);
@@ -248,9 +189,7 @@ img{
     height: 150px;
 }
 
-.green{
-    background-color: rgb(158, 226, 158);
-}
+.green{background-color: rgb(158, 226, 158);}
 
 .categorydisplay{
     border: 5px solid black;
@@ -279,22 +218,9 @@ img{
 
 
 
-
-
-
-
-
 @media screen and (max-width: 600px) {
-    body {
-      /* background-color: red; */
-      /* display: none; */
-    }
-  
 
-    header{
-        height: 50px;
-        
-    }
+    header{height: 50px;}
 
     p{font-size: 12px;}
 
@@ -305,101 +231,79 @@ img{
         border: none;
         align-items: center;
         border: 4px solid rgb(77, 90, 148);
-
     }
 
-    .top-main h1{
-        font-size: 30px;
+    .top-main h1{font-size: 30px;}
+
+    .top-main img{display: none;}
+
+    .bottom-main{flex-direction: column;
+    /* height: 600px; */}
+
+    .kitchen{  
+        width: 300px;
+        height: 200px;}
+
+    .left-GamingPage{
+        width: 300px;
+        height: 275px;
+        /* border: 2px red solid; */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
     }
 
-    .top-main img{
-        display: none;
+    .left-GamingPage h3{
+        font-size: 10px;
     }
 
-  .bottom-main{
-    flex-direction: column;
-    /* height: 600px; */
-}
+    .left-GamingPage h2{
+        font-size: 12px;
+    }
 
-.kitchen{
-    width: 300px;
-    height: 200px;
-}
+    .right-GamingPage{
+        width: 300px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* border: 2px red solid; */
+    }
+    .playButton{font-size: 30px;}
 
-.left-GamingPage{
-    width: 300px;
-    height: 275px;
-    /* border: 2px red solid; */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-}
+    .databaseSelect h1{font-size: 15px;}
 
-.left-GamingPage h3{
-    font-size: 10px;
-}
+    .categorydisplay{font-size: 10px;}
 
-.left-GamingPage h2{
-    font-size: 12px;
-}
+    .catAndDangerscore{width: 300px;}
 
-.right-GamingPage{
-    width: 300px;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* border: 2px red solid; */
-}
-.playButton{
-    font-size: 30px;
-}
+    .timer{margin: 0px 0px 0px 0px;}
 
-.databaseSelect h1{
-    font-size: 15px;
-}
+    .keyboard{
+        margin-top: 5px;
+        width: 300px;
+    }
 
-.categorydisplay{
-    font-size: 10px;
-}
-.catAndDangerscore{
-    width: 300px;
-}
-.timer{
-    margin: 0px 0px 0px 0px;
-}
-#guessArea{
-    /* margin: 0px; */
-}
+    .row{margin: 10px 0px;}
 
-.keyboard{
-    margin-top: 5px;
-    width: 300px;
-}
-.row{
-    margin: 10px 0px;
-}
-.letter {
-    display: inline-block;
-    padding: 5px 6px;
-    border: 1px solid #000;
-    text-transform: uppercase;
-}
+    .letter {
+        display: inline-block;
+        padding: 5px 6px;
+        border: 1px solid #000;
+        text-transform: uppercase;
+    }
 
-.answer{font-size: 15px;}
-#gmaeoverH1{font-size: 15px;}
-.playButton:hover{font-size: 40px;}
+    .answer{font-size: 15px;}
 
-.inputStage p{
-    font-size: 12px;
-}
+    #gmaeoverH1{font-size: 15px;}
+
+    .playButton:hover{font-size: 40px;}
+
+    .inputStage p{font-size: 12px;}
 
 }
-
-
-
 
 .hidden{
     display: none;

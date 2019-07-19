@@ -65,8 +65,6 @@ document.querySelectorAll('.databaseBtn').forEach(function(btn){
 
 
 
-
-
 //create the word to guess and the blankline--------------------
 getGuessBtn.forEach(function(guessB){
     guessB.addEventListener('click',function(){
@@ -122,8 +120,6 @@ getGuessBtn.forEach(function(guessB){
 
 
 })
-
-
 
 
 
@@ -197,7 +193,6 @@ keyboards.forEach(function(key){
         }
     })
 })
-
 
 
 
