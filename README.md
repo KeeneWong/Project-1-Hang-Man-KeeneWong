@@ -1,4 +1,4 @@
-# Project-1-Hang-Man-KeeneWong
+# Cooking PaPa
 
 <img src="./sc/sc4.png">
 
@@ -8,39 +8,25 @@ Description
 
 https://keenewong.github.io/cookingpapa/
 
-My name is cookingpapa. :)
+Have you ever play hangman~
 
-Its a Game of papa cooking food to his son. (By typing the correct word)
+If you are a fan of hangman, don't miss cooking papa !!
 
-It's like a branch of hangman.
+Cooking PaPa is a word gussing game for both single and multiplayer
 
-Auctually the logic is the same.
+It's a story of a kind PaPa trying to cook for his son
 
-Just follow the interface and CLICK to play!!!
+What are you waiting for, come and try it out !
 
+Programming Skills used in this project
 
-
-<!-- What problem(s) your projects solves -->
-
-Problem:
-
--sometimes css layer was messy when the number div are keep increasing.
-
--replace the multiple __ with the letter when plauyer got the right word.
-
--get the sound effect.
-
--deploy the website
-
--acess the object and array of food database
+Javascript
+CSS 
+HTML5
 
 
 
-
-Brief
-
-<!-- This could be a code snippet showing how your project should be used (if it is meant to be integrated into another app)
-This could be a screenshot of your project running in the browser (if it is a stand-alone application) -->
+How To Play :
 
 Step 1:
 
@@ -79,10 +65,13 @@ But if you get all the word , you win.
 
 
 
-List of Features / User Stories
+User Stories
 
-<!-- This typically will be a short list of the features / user stories that you planned during the development phase of the project
-To provide more detail, you can show how you categorized these features into Bronze (MVP), Silver, and Gold Levels and indicate which features you complete / have yet to complete -->
+This is my first project in GA.
+The idea of this game was came from hangman.
+However I do not want to create a game that everyone has been created.
+Therefore I change the theme of it and try to implement a interesting story to the game :)
+
 
 MVP:
 
@@ -108,15 +97,17 @@ create some image and when player drop the image into the oven the word of image
 having different food appear in the oven
 
 
+Challengen faced:
 
+-sometimes css layer was messy when the number div are keep increasing.
 
+-replace the multiple __ with the letter when plauyer got the right word.
 
+-get the sound effect.
 
-Programming Skills used in this project
+-deploy the website
 
-Javascript
-CSS 
-HTML5
+-acess the object and array of food database
 
 
 
