@@ -1,5 +1,7 @@
 # Project-1-Hang-Man-KeeneWong
 
+<img src="./sc/sc4.png">
+
 Description
 
 <!-- What your project is / should be used for -->
